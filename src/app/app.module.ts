@@ -13,12 +13,14 @@ import { ProyectosComponentComponent } from './proyectos-component/proyectos-com
 import { QuienesComponentComponent } from './quienes-component/quienes-component.component';
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { RouterModule, Routes } from '@angular/router';
+import { EditaComponent } from './edita/edita.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponentComponent },
   { path: 'proyectos', component: ProyectosComponentComponent },
   { path: 'quienes', component: QuienesComponentComponent },
-  { path: 'contacto', component: ContactoComponentComponent }
+  { path: 'contacto', component: ContactoComponentComponent },
+  { path: 'edita/:id', component: EditaComponent },
 ];
 
 @NgModule({
@@ -30,14 +32,15 @@ const appRoutes: Routes = [
     ProyectosComponentComponent,
     QuienesComponentComponent,
     ContactoComponentComponent,
+    EditaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [ServicioEmpleadosService, EmpleadosService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

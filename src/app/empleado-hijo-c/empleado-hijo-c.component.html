@@ -2,19 +2,29 @@
   <div class="row">
     <div class="col">
       <div>
-
-        {{indice + 1}}: {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}}
-        {{empleadoDeLista.salario}}
-
+        {{ indice + 1 }}: {{ empleadoDeLista.nombre }}
+        {{ empleadoDeLista.apellido }} {{ empleadoDeLista.cargo }}
+        {{ empleadoDeLista.salario }}
+        <a
+          [routerLink]="['/edita', indice]"
+          [queryParams]="{ accion: 1 }"
+          style="margin-right: 25px"
+          >Actualiza
+        </a>
+        <a [routerLink]="['/edita', indice]" [queryParams]="{ accion: 2 }"
+          >Elimina
+        </a>
       </div>
 
-      <ul style="list-style: none;">
-        <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
+      <ul style="list-style: none">
+        <li *ngFor="let caracteristica of arrayCaracteristicas">
+          {{ caracteristica }}
+        </li>
       </ul>
 
       <app-caracteristicas-empleado-c
-        (caracteristicasEmpleados)="agregarCaracteristica($event)"></app-caracteristicas-empleado-c>
-
+        (caracteristicasEmpleados)="agregarCaracteristica($event)"
+      ></app-caracteristicas-empleado-c>
     </div>
   </div>
 </div>
