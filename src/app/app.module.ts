@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     QuienesComponentComponent,
     ContactoComponentComponent,
     EditaComponent,
-    ErrorPersonalizadoComponent,
+    ErrorPersonalizadoComponent
   ],
   imports: [
     BrowserModule,
@@ -46,4 +46,4 @@ const appRoutes: Routes = [
   providers: [ServicioEmpleadosService, EmpleadosService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
